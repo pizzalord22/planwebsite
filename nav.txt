@@ -1,0 +1,10 @@
+pages
+----------------------------
+index (login page)
+register
+overzicht pagina (hier kun je de laats bewerkte projecten zien)
+    projecten(je gaat naar een pagina waar je alle projecten kan zien waar je bij betrokken bent)
+    nieuw project (je gaat naar een pagina waar je nieuwe projecte kan aanmaken)
+        project overzicht(he ziet je die informatie van een project)
+        taken (je gaat naar een pagina waar je de taken kan zien die bij het geselecteerde project horen)
+        nieuwe taak  (je gaat naar een pagina waar je een nieuwe taak kan toevoegen aan een project)

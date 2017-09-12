@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<div>
+    <?php
+    if(isset($_GET['projectID'])){
+    $ID = $_GET['projectID'];
+    }else{
+    header("location: ../index.php");
+    }
+    ?>
+</div>
+<head>
+    <meta charset="UTF-8">
+    <title>Task - plannings website</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/menu.css">
+</head>
+<body>
+<div class="menuWrapper">
+    <ul class="menu">
+        <li>
+            <a href="testFile.php?page=overzichtProjecten" class="menuItem">Overzicht projecten en taken</a>
+        </li>
+        <li>
+            <a href="testFile.php?page=newProject" class="menuItem">Nieuw project</a>
+        </li>
+        <li>
+            <a href="testFile.php?page=newTask" class="menuItem">Nieuwe taak</a>
+        </li>
+        <li>
+            <a href="#" class="menuItem">Logout</a>
+        </li>
+    </ul>
+</div>
+<section>
+    <div class="col-md-1 side-menu">
+        <ul class="side-menu-list">
+            <li class="side-menu-link"><a class="menu" href="#">new task</a></li>
+            <li class="side-menu-link"><a class="menu" href="#">remove task</a></li>
+        </ul>
+    </div>
+    <div class="col-md-8 project">
+        <?php
+         $database = new Database();
+            //$database->showProject("projectID = ".$ID);
+            $database->select("*","projecten","projectID = ".$ID);
+            echo $projectName;
+        ?>
+    </div>
+</section>
+</body>
+</html>

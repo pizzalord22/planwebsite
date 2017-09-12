@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Overzicht - planningen</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/menu.css">
+</head>
+<body>
+<div class="menuWrapper">
+    <ul class="menu">
+        <li>
+            <a href="testFile.php?page=overzichtProjecten" class="menuItem">Overzicht projecten en taken</a>
+        </li>
+        <li>
+            <a href="testFile.php?page=newProject" class="menuItem">Nieuw project</a>
+        </li>
+        <li>
+            <a href="testFile.php?page=newTask" class="menuItem">Nieuwe taak</a>
+        </li>
+        <li>
+            <a href="#" class="menuItem">Logout</a>
+        </li>
+    </ul>
+</div>
+<div class="container">
+    <div class="row">
+        <?php
+            $database = new Database();
+            $database->showProject();
+        ?>
+    </div>
+</div>
+<section>
+    <div class="footer">
+    </div>
+</section>
+</body>
+</html>

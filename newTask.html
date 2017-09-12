@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nieuw taak</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/menu.css">
+</head>
+<body>
+<?php
+    if(isset($_GET['page'])){
+        $ID = $_GET['projectID'];
+    }else{
+        header("location: ../index.php");
+    }
+?>
+<div class="menuWrapper">
+    <ul class="menu">
+        <li>
+            <a href="testFile.php?page=overzichtProjecten" class="menuItem">Overzicht projecten en taken</a>
+        </li>
+        <li>
+            <a href="testFile.php?page=newProject" class="menuItem">Nieuw project</a>
+        </li>
+        <li>
+            <a href="testFile.php?page=newTask" class="menuItem">Nieuwe taak</a>
+        </li>
+        <li>
+            <a href="#" class="menuItem">Logout</a>
+        </li>
+    </ul>
+</div>
+<div class="header">
+    new task
+</div>
+<div class="col-md-4"></div>
+<div class="col-md-4">
+    <form class="form" method="post" action="php/newTask.php">
+        <table>
+            <tr>
+                <td><label for="taskName">Project name</label></td>
+                <td><input id="taskName" name="taskName" type="text" placeholder="Project name" required></td>
+            </tr>
+            <tr>
+                <td><label for="taskDescription">Description</label></td>
+                <td><textarea placeholder="Description" id="taskDescription" name="taskDescription"></textarea></td>
+            </tr>
+            <tr>
+                <td><label for="startDate">Start date</label></td>
+                <td><input name="startDate" id="startDate" type="date" required></td>
+            </tr>
+            <tr>
+                <td><label for="endDate">End date</label></td>
+                <td><input name="endDate" id="endDate" type="date" required></td>
+            </tr>
+            <tr>
+                <td><label for="user">User</label></td>
+                <td><input name="user" id="user" type="text" placeholder="not required"></td>
+            </tr>
+            <input type="hidden" value="<?php echo $ID ?>">
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Submit"></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<div class="col-md-4"></div>
+</body>
+</html>
